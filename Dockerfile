@@ -1,6 +1,7 @@
 FROM python:3.7
 
-ADD . /web
+COPY . /web
 WORKDIR /web
 RUN pip install -r ./requirements.txt
-CMD ["/web/Database/sqlite_create.py"]
+ENTRYPOINT ["python"]
+CMD ["/web/Database/sql_orm.py"]
