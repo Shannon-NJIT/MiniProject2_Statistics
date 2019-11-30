@@ -219,7 +219,7 @@ session.query(Order).get(100)
 
 ## filter() method
 
-print(session.query(Customer).filter(Customer.first_name == 'John').all())
+(session.query(Customer).filter(Customer.first_name == 'John').all())
 
 print(session.query(Customer).filter(Customer.first_name == 'John'))
 
@@ -248,3 +248,4 @@ session.query(Customer).filter(and_(
     Customer.first_name == 'John',
     not_(Customer.town == 'Peterbrugh', )
 )).all()
+
