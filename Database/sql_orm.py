@@ -205,3 +205,9 @@ print(session.query(Customer).count())
 print(session.query(Item).count())
 print(session.query(Order).count())
 
+# first() method
+
+session.query(Customer).first()
+session.query(Item).first()
+session.query(Order).first()
+
