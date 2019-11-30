@@ -270,3 +270,12 @@ session.query(Item).filter(Item.cost_price.between(10, 50)).all()
 # NotBetween
 
 session.query(Item).filter(not_(Item.cost_price.between(10, 50))).all()
+
+# Like
+session.query(Item).filter(Item.name.like("%r")).all()
+
+session.query(Item).filter(Item.name.ilike("w%")).all()
+
+# Not Like
+
+session.query(Item).filter(not_(Item.name.like("W%"))).all()
