@@ -292,3 +292,11 @@ print(session.query(Customer).filter(Customer.address.ilike("%avenue")).limit(2)
 session.query(Customer).limit(2).offset(2).all()
 
 print(session.query(Customer).limit(2).offset(2))
+
+# order_by()method
+
+session.query(Item).filter(Item.name.ilike("wa%")).all()
+
+from sqlalchemy import desc
+
+session.query(Item).filter(Item.name.ilike("wa%")).order_by(desc(Item.cost_price)).all()
