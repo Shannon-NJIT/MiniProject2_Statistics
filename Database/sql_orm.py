@@ -317,3 +317,16 @@ session.query(Customer.id, Customer.username, Order.id).join(Order).all()
     #Customer.last_name == 'Green',
     #Order.id == 1,
 #).all()
+
+# outerjoin()method
+
+#session.query(
+    #Customer.first_name,
+    #Order.id,
+#).outerjoin(Order).all()
+
+#session.query(
+    #Customer.first_name,
+    #Order.id,
+#).outerjoin(Order, full=True).all()
+# got error saying right and full outer joins are currently not supported
