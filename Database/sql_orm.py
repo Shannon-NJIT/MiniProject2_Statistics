@@ -256,3 +256,9 @@ session.query(Order).filter(Order.date_shipped == None).all()
 # Is not null
 
 session.query(Order).filter(Order.date_shipped != None).all()
+
+# In
+session.query(Customer).filter(Customer.first_name.in_(['Toby', 'Sarah'])).all()
+
+# Not In
+session.query(Customer).filter(Customer.first_name.notin_(['Toby', 'Sarah'])).all()
