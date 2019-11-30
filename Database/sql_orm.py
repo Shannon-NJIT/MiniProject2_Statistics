@@ -286,3 +286,9 @@ session.query(Customer).filter(Customer.address.ilike("%avenue")).limit(2).all()
 
 print(session.query(Customer).limit(2))
 print(session.query(Customer).filter(Customer.address.ilike("%avenue")).limit(2))
+
+# offset() method
+
+session.query(Customer).limit(2).offset(2).all()
+
+print(session.query(Customer).limit(2).offset(2))
