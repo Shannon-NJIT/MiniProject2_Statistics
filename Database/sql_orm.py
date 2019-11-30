@@ -195,15 +195,15 @@ print(session.query(Customer))
 
 q = session.query(Customer)
 for c in q:
-    print(c.id, c.first_name)
+    c.id, c.first_name
 
 session.query(Customer.id, Customer.first_name).all()
 
 ## count() method
 
-print(session.query(Customer).count())
-print(session.query(Item).count())
-print(session.query(Order).count())
+session.query(Customer).count()
+session.query(Item).count()
+session.query(Order).count()
 
 # first() method
 
