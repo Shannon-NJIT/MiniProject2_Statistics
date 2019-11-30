@@ -249,3 +249,10 @@ session.query(Customer).filter(and_(
     not_(Customer.town == 'Peterbrugh', )
 )).all()
 
+# is Null
+
+session.query(Order).filter(Order.date_shipped == None).all()
+
+# Is not null
+
+session.query(Order).filter(Order.date_shipped != None).all()
