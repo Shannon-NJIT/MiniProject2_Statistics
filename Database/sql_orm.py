@@ -183,3 +183,18 @@ print('------')
 
 for ol in c1.orders[1].order_lines:
     ol.id, ol.item, ol.quantity
+
+# Querying Data
+
+session.query(Customer).all()
+
+session.query(Item).all()
+session.query(Order).all()
+
+print(session.query(Customer))
+
+q = session.query(Customer)
+for c in q:
+    print(c.id, c.first_name)
+
+session.query(Customer.id, Customer.first_name).all()
