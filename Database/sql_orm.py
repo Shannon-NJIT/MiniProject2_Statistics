@@ -211,3 +211,8 @@ session.query(Customer).first()
 session.query(Item).first()
 session.query(Order).first()
 
+## get() method
+
+print(session.query(Customer).get(1))
+print(session.query(Item).get(1))
+session.query(Order).get(100)
