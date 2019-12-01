@@ -395,12 +395,21 @@ session.commit()
 
 ##Deleting Data
 
-i = session.query(Item).filter(Item.name == 'Monitor').one()
-i
-session.delete(i)
-session.commit()
+#i = session.query(Item).filter(Item.name == 'Monitor').one()
+#i
+#session.delete(i)
+#session.commit()
 
-session.query(Item).filter(
-    Item.name.ilike("W%")
-).delete(synchronize_session='fetch')
-session.commit()
+#session.query(Item).filter(
+    #Item.name.ilike("W%")
+#).delete(synchronize_session='fetch')
+#session.commit()
+
+## Raw Queries
+from sqlalchemy import text
+
+session.query(Customer).filter(text("first_name = 'John'")).all()
+
+session.query(Customer).filter(text("Town like 'Nor%'")).all()
+
+session.query(Customer).filter(text("town like 'Nor%'")).order_by(text("first_name, id desc")).all()
