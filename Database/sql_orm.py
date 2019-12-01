@@ -365,10 +365,19 @@ print(session.query(
 
 from sqlalchemy import cast, Date, union
 
-session.query(
-    cast(func.pi(), Integer),
-    cast(func.pi(), Numeric(10,2)),
-    cast(datetime(2010,12, 1)),
-    cast(datetime(2010,12, 1)),
-).all()
+#session.query(
+    #cast(func.pi(), Integer),
+    #cast(func.pi(), Numeric(10,2)),
+    #cast('2010-12-01', DateTime),
+    #cast('2010-12-01', Date),
+#).all()
+
+#Error:SQLite Date type only accepts Python date objects as input.
+
+## Unions
+
+s1 = session.query(Item.id, Item.name).filter(Item.name.like("Wa%"))
+s2 = session.query(Item.id, Item.name).filter(Item.name.like("%e%"))
+print(s1.union(s2).all())
+print(s1.union_all(s2).all())
 
